@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webtoon_ex/screens/home_screen.dart';
+import 'package:webtoon_ex/services/api_service.dart';
 
 // https://webtoon-crawler.nomadcoders.workers.dev/
 
@@ -10,11 +11,11 @@ import 'package:webtoon_ex/screens/home_screen.dart';
 // 화면2개, 화면이동, API사용, 화면 전환 애니메이션
 
 void main() {
+  ApiService().getTodayToons();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final String _url = 'https://webtoon-crawler.nomadcoders.workers.dev/';
   const MyApp({super.key});
 
   // This widget is the root of your application.
