@@ -11,7 +11,7 @@ import 'package:webtoon_ex/services/api_service.dart';
 // 화면2개, 화면이동, API사용, 화면 전환 애니메이션
 
 void main() {
-  ApiService().getTodayToons();
+  // ApiService().getTodayToons();
   runApp(const MyApp());
 }
 
