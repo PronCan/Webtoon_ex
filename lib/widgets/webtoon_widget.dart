@@ -20,6 +20,7 @@ class Webtoon extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
+            // 애니메이션 생성
             builder: (context) =>
                 DetailScreen(title: title, thumb: thumb, id: id),
             // card형태와 스크린 구분 가능
