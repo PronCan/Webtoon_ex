@@ -7,7 +7,7 @@ class ApiService {
   final String _url = 'https://webtoon-crawler.nomadcoders.workers.dev';
   final String today = 'today';
 
-  void getTodayToons() async {
+  Future<List<WebtoonModel>> getTodayToons() async {
     List<WebtoonModel> webtooInstances = [];
     final url = Uri.parse('$_url/$today');
     final res = await http.get(url);
@@ -16,10 +16,10 @@ class ApiService {
       final List<dynamic> webtoons = jsonDecode(res.body);
       for (var webtoon in webtoons) {
         // print(webtoon);
-        final toon = WebtoonModel.fromJson(webtoon);
-        print(toon.title);
+        webtooInstances.add(WebtoonModel.fromJson(webtoon));
+        // print(toon.title);
       }
-      return;
+      return webtooInstances;
     }
     throw Error();
   }
